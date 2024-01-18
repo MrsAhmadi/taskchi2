@@ -1,0 +1,14 @@
+.rz-legend-item{
+    direction: rtl;
+    padding-right: 10px;
+}
+.rz-legend-right{
+    direction: ltr;
+}
+.rz-legend-right::-webkit-scrollbar{
+    width: 10px;
+}
+.rz-legend-right::-webkit-scrollbar-thumb{
+    background-color:rgba(36, 105, 92, 0.2);
+    border-radius: 10px;
+}

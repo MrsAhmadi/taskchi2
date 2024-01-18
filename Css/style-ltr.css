@@ -1,0 +1,192 @@
+body{
+    direction: ltr;
+}
+.me-auto{
+    margin-left: auto!important;
+    margin-right: 0 !important;
+}
+.sidebar {
+    border-right: 1px solid #e6edef;
+    border-left: none;
+}
+ul.nav-bar .nav-item .nav-link{
+    text-align: left;
+}
+.nav-link i.fa-angle-left {
+    float: right;
+    padding-top: 3px;
+    transition: transform .35s ease;
+    transform-origin: 0.5em 62%;
+    transform: rotate(-180deg);
+}
+/*.nav-link[aria-expanded="true"] i.fa-angle-left {*/
+/*    transform: rotate(-90deg);*/
+/*}*/
+.ms-2 {
+    margin-right: 0.5rem !important;
+}
+#btn-newTask{
+    margin-right: 10px;
+    margin-left: 0;
+}
+.my-task .badge-comment {
+    left: auto;
+    right: 8px;
+}
+.profile-symbol:first-child {
+    margin-right:-15px;
+    margin-left: 0;
+}
+.list-inline-item:not(:first-child) {
+    margin-left: 0.2rem;
+    margin-right: 0;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
+}
+ul.ms-3 {
+
+    margin-left: 0 !important;
+}
+.form-control.me-2{
+    margin-left: 0.5rem;
+}
+.smg-out{
+    float: left;
+}
+.smg-in{
+    float: right;
+}
+.smg-out::before{
+    left: -6px;
+    right: auto;
+}
+.smg-in::before{
+    right: -6px;
+    left: auto;
+}
+.text-area svg.sticker{
+    left: 8px;
+    right: auto;
+}
+.text-area svg.sticker{
+    right: 7px;
+    left: auto;
+}
+.chatroom-sidebar .profile{
+    margin-right:10px;
+}
+.sidebar-user ul li::before{
+    left: -15px;
+    right: auto;
+}
+.ms-3 {
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+}
+.ps-0{
+    padding-right: 0 !important;
+}
+.form-check.ps-0{
+    padding-left: 1.5rem!important;
+}
+.me-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0!important;
+}
+.text-start {
+    text-align: right!important;
+}
+.text-end{
+    text-align:left!important;
+}
+.me-4 {
+    margin-left: 1.5rem !important;
+    margin-right: 0!important;
+}
+.activities .timeline::after{
+    left: 36px;
+    right: auto;
+}
+.activities .timeline .timeline-item .circle{
+    left: 30px;
+    right: auto;
+}
+.me-1 {
+    margin-left: 0.25rem !important;
+    margin-right: 0!important;
+}
+.card-toolbar .menu-sub{
+    right: 0;
+    left: auto;
+}
+.btn-angelright .fa-angle-right,.btn-angleleft .fa-angle-left {
+    transform: rotate(180deg);
+}
+.ms-1 {
+    margin-right: 0.25rem !important;
+    margin-left:0 !important;
+}
+.content::after{
+    left: -6px;
+    right: auto;
+}
+ul.tree-view i.fa-plus{
+    left: 0;
+    right: auto;
+}
+ul.nested li::before{
+    left: -6px;
+    right: auto;
+}
+ul.nested{
+    border-right: none;
+    border-left: 1px solid var(--main-color);
+    padding-left: 5px;
+    padding-right: 0;
+}
+.fa-circle{
+    float:right;
+    margin-right: -10px;
+    margin-left: 0;
+}
+#login .input-group i{
+    left: 0;
+    right: auto;
+}
+#login .input-group input{
+    padding: 10px 10px 10px 50px;
+}
+.my-task ul.menu-sub li a{
+    direction: ltr;
+    padding-left:5px;
+    padding-right: 20px;
+}
+.box-setting{
+   right: -140px;
+    left: auto;
+}
+.box-setting.active{
+    transform: translateX(-140px);
+}
+/*#login .input-group i.fa-eye{*/
+/*    left: 0;*/
+/*    right: auto;*/
+/*}*/
+.input-group span{
+    left: auto;
+    right:45px;
+}
+
+
+@media (min-width: 768px){
+    .ms-md-4 {
+        margin-right: 1.5rem !important;
+        margin-left: 0!important;
+    }
+}
+/*@media screen  and (max-width: 767px) {*/
+/*    .sidebar {*/
+/*        transform: translateX(-100%);*/
+/*    }*/
+/*}*/

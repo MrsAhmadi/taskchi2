@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسک چی - </title>
+  <link rel="stylesheet" href="../Css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Css/fontawesome.css">
+  <link rel="stylesheet" href="../Css/solid.css">
+  <link rel="stylesheet" href="../Css/brands.css">
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/style-ltr.css">
+  <link rel="stylesheet" href="../Css/dark.css">
+  <link rel="stylesheet" href="../Css/Responsive.css">
+  <script src="../myScript/jquery-3.6.0.min.js"></script>
+  <script src="../myScript/bootstrap.min.js"></script>
+  <script src="../myScript/js.js"></script>
+
+
+</head>
+<body>
+<!-- Modal -->
+<div id="logout-modal" class="modal fade" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">هشدار</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p class="text-muted">آیا از خروج مطمئن هستید؟</p>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger px-4">خروج</button>
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">بازگشت</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of modal-->
+<header class="col-12 col-xl-10 col-lg-9 col-md-8 top-header me-auto bg-white shadow-sm py-3" >
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-2 d-md-none d-flex align-items-center">
+        <button class="hamburger-button collapsed" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="col-7 col-md-7 col-lg-3">
+        <form  action="">
+          <div class="input-group d-flex align-items-center">
+            <label for="company-selection" class="form-label ms-2 fw-bold text-dark mb-0 ">شرکت جاری</label>
+            <select class="form-control rounded" name="company-selection" id="company-selection">
+              <option value="">...</option>
+              <option value="0">ثبت شرکت جدید</option>
+              <option value="1">شخصی عباس کاشی</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="col-3 col-md-5 col-lg-6">
+        <ul class="navbar-nav flex-row justify-content-end ">
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link  rounded px-2 px-md-3 fw-bold " role="button" id="btn-newTask">
+              تسک جدید
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded px-2 px-md-3 ml-3 fw-bold " href="#logout-modal" data-bs-toggle="modal"  id="btn-exit">
+              خروج
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="box-setting">
+  <div class="d-flex align-items-center gap-3">
+    <div>
+      <button class="btn setting-btn">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+      </button>
+    </div>
+    <div class="bg-white shadow rounded p-2 d-flex flex-column gap-3">
+      <div class="dark-Mode">
+        <h6 class="mb-3 fw-bold">تغییر حالت دارک</h6>
+        <div class="form-check form-switch switch-theme-mode p-0">
+          <label id="switch" class="form-check-label switch position-relative d-inline-block  rounded" for="nightModeSwitch">
+            <input type="checkbox" id="nightModeSwitch" class="">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="box-theme">
+        <h6 class="mb-3 fw-bold">تغییر تم قالب</h6>
+        <ul class="list-color list-unstyled d-flex flex-wrap align-items-center gap-2">
+          <li>
+            <button role="button" class="btn btn-color" data-color="#24695C33" value="#24695c"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#7c282845" value="#8B0000FF"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#2d698733" value="#2d6987"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#181c3247" value="#181c32"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#6610f22b" value="#9c6ce9"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#ff7f5038" value="#FF7F50FF"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#f75f9630" value="#f75f96"></button>
+          </li>
+
+          <li>
+            <button role="button" class="btn btn-color " data-color="#28eded21" value="#28eded"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 col-lg-3 col-md-4 bg-white sidebar">
+      <button type="button" class="closed d-block d-md-none mt-2 ms-2">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="sidebar-user border-bottom ">
+        <div class=" box-user-profile">
+          <div id="edit-profile" class="d-flex justify-content-center  align-items-center mt-3 setting-list">
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+            </a>
+          </div>
+          <a href="#" class="user-profile">
+            <img src="../images/profile.png" alt="profile">
+          </a>
+          <a href="#" id="user-name">
+            <h6>
+              خانم احمدی
+            </h6>
+          </a>
+          <span id="user-number">09139096707</span>
+        </div>
+        <div class=" work-hours">
+          <ul>
+            <li title="کارکرد ماه جاری">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+            <li title="کارکرد هفته جاری">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+            <li title="کارکرد امروز">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="sidebar-menu">
+        <ul class="nav-bar list-unstyled fw-bold mx-2 " id="accordion-menu">
+          <li class="nav-item ">
+            <a class="nav-link active"  >
+              داشبورد
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              اطلاعات اولیه
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseOne" class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li><a href="#">شرکت های من</a></li>
+              <li><a href="#" >پروژه های من</a></li>
+              <li><a href="#" >گروه های من</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link  collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              تسک ها
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseTwo"  class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li><a href="#">تسک های شرکت</a></li>
+              <li><a href="#">تسک های شرکت - روزانه</a></li>
+              <li><a href="#">کارکردها</a></li>
+              <li><a href="#">کارکردها - تایم لاین</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  collapsed " role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              گزارشات
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseThree" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu" >
+              <li><a  href="#" >مجموع کارکرد</a></li>
+              <li><a href="#"  >پروژه ها</a></li>
+              <li><a href="#" >ماهانه پروژه ها</a></li>
+              <li><a href="#">پرسنل</a></li>
+              <li><a href="#" >ماهانه پرسنل</a></li>
+              <li><a href="#" >تسک ها</a></li>
+              <li><a href="#">زمان پیش بینی</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link list" role="button">
+              چت
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#setting" aria-expanded="false" aria-controls="setting">
+              تنظیمات
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="setting" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li>
+                <a href="#">
+                  تنظیمات کاربران
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-xl-10 col-lg-9 col-md-8 me-auto py-5 mt-5">
+      <div class="container-fluid">
+        <section class="row mb-4">
+          <div class="col-12 col-lg-4">
+            <a href="" class="card bg-danger rounded border-0 text-white">
+              <div class="card-body p-3">
+                <svg class="font-icon2" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z" fill="currentColor"></path>
+                  <path opacity="0.3" d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z" fill="currentColor"></path>
+                  <path opacity="0.3" d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z" fill="currentColor"></path>
+                </svg>
+                <div class="mt-4">
+                  <h6 class="mb-0">سبد خرید</h6>
+                  <span>مزارع و خانه ها</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 my-3 my-lg-0">
+            <a href="" class="card bg-primary rounded border-0 text-white">
+              <div class="card-body p-3">
+                <svg class="font-icon2" viewBox="0 0 24 24" fill="none">
+                  <path opacity="0.3" d="M18 21.6C16.3 21.6 15 20.3 15 18.6V2.50001C15 2.20001 14.6 1.99996 14.3 2.19996L13 3.59999L11.7 2.3C11.3 1.9 10.7 1.9 10.3 2.3L9 3.59999L7.70001 2.3C7.30001 1.9 6.69999 1.9 6.29999 2.3L5 3.59999L3.70001 2.3C3.50001 2.1 3 2.20001 3 3.50001V18.6C3 20.3 4.3 21.6 6 21.6H18Z" fill="currentColor"></path>
+                  <path d="M12 12.6H11C10.4 12.6 10 12.2 10 11.6C10 11 10.4 10.6 11 10.6H12C12.6 10.6 13 11 13 11.6C13 12.2 12.6 12.6 12 12.6ZM9 11.6C9 11 8.6 10.6 8 10.6H6C5.4 10.6 5 11 5 11.6C5 12.2 5.4 12.6 6 12.6H8C8.6 12.6 9 12.2 9 11.6ZM9 7.59998C9 6.99998 8.6 6.59998 8 6.59998H6C5.4 6.59998 5 6.99998 5 7.59998C5 8.19998 5.4 8.59998 6 8.59998H8C8.6 8.59998 9 8.19998 9 7.59998ZM13 7.59998C13 6.99998 12.6 6.59998 12 6.59998H11C10.4 6.59998 10 6.99998 10 7.59998C10 8.19998 10.4 8.59998 11 8.59998H12C12.6 8.59998 13 8.19998 13 7.59998ZM13 15.6C13 15 12.6 14.6 12 14.6H10C9.4 14.6 9 15 9 15.6C9 16.2 9.4 16.6 10 16.6H12C12.6 16.6 13 16.2 13 15.6Z" fill="currentColor"></path>
+                  <path d="M15 18.6C15 20.3 16.3 21.6 18 21.6C19.7 21.6 21 20.3 21 18.6V12.5C21 12.2 20.6 12 20.3 12.2L19 13.6L17.7 12.3C17.3 11.9 16.7 11.9 16.3 12.3L15 13.6V18.6Z" fill="currentColor"></path>
+                </svg>
+                <div class="mt-4">
+                  <h6 class="mb-0">آپارتمان ها</h6>
+                  <span>آپارتمان ، اتاقهای مشترک ، دوبلکس</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 ">
+            <a href="" class="card bg-success rounded border-0 text-white">
+              <div class="card-body p-3">
+                <svg class="font-icon2" viewBox="0 0 24 24" fill="none">
+                  <path opacity="0.3" d="M14 12V21H10V12C10 11.4 10.4 11 11 11H13C13.6 11 14 11.4 14 12ZM7 2H5C4.4 2 4 2.4 4 3V21H8V3C8 2.4 7.6 2 7 2Z" fill="currentColor"></path>
+                  <path d="M21 20H20V16C20 15.4 19.6 15 19 15H17C16.4 15 16 15.4 16 16V20H3C2.4 20 2 20.4 2 21C2 21.6 2.4 22 3 22H21C21.6 22 22 21.6 22 21C22 20.4 21.6 20 21 20Z" fill="currentColor"></path>
+                </svg>
+                <div class="mt-4">
+                  <h6 class="mb-0">وضعیت فروش</h6>
+                  <span>50 درصد افزایش برای سال مالی 20</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section class="row mb-4">
+          <div class="col-12 col-lg-4">
+            <div class="card rounded border-0 h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">فروش بررسی اجمالی</h6>
+                  <span class="text-muted opacity-50 fs-12">آمار فروش اخیر</span>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div class="row my-4">
+                  <div class="col-6 ps-0">
+                    <div>
+                      <span class="text-muted opacity-50 fs-8 fw-bold ">فروش متوسط</span>
+                      <div class="d-flex">
+                        <span class="fs-6 fw-bold">650$</span>
+                        <svg class="font-icon text-success" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"></rect>
+                          <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"></path>
+                        </svg>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 pe-0">
+                    <div>
+                      <span class="text-muted opacity-50 fs-8 fw-bold ">کمیسیون</span>
+                      <div class="d-flex">
+                        <span class="fs-6 fw-bold">233.500$</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mt-4 ps-0">
+                    <div>
+                      <span class="text-muted opacity-50 fs-8 fw-bold ">سالانه</span>
+                      <div class="d-flex">
+                        <span class="fs-6 fw-bold">233.500$</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mt-4 pe-0">
+                    <div>
+                      <span class="text-muted opacity-50 fs-8 fw-bold ">سالانه</span>
+                      <div class="d-flex">
+                        <span class="fs-6 fw-bold">233.500$</span>
+                        <svg class="font-icon text-danger" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.5" x="11" y="18" width="13" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor"></rect>
+                          <path d="M11.4343 15.4343L7.25 11.25C6.83579 10.8358 6.16421 10.8358 5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75L11.2929 18.2929C11.6834 18.6834 12.3166 18.6834 12.7071 18.2929L18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25C17.8358 10.8358 17.1642 10.8358 16.75 11.25L12.5657 15.4343C12.2533 15.7467 11.7467 15.7467 11.4343 15.4343Z" fill="currentColor"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 my-3 my-lg-0">
+            <div class="card rounded border-0 h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">اقدام لازم</h6>
+                  <span class="text-muted opacity-50 fs-12">تکمیل پروفایل</span>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div class=""></div>
+                <div class="pt-3">
+                  <p class="text-center fs-12">
+                    <span class="badge badge-lite-danger">یادداشت:</span>
+                    دو سرعت فعلی به ذینفعان احتیاج دارد
+                    <br>برای تصویب سیاست های تازه اصلاح شده</p>
+                  <a href="#" class="btn theme-bg w-100 fs-12 py-2" role="button">اقدام به</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 ">
+            <div class="card rounded border-0 h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">روندها</h6>
+                  <span class="text-muted opacity-50 fs-12">اخرین روندها</span>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div class=""></div>
+                <div class="content-box margin-between pt-3">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center ">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 0 512 512">
+                          <path style="fill:#FF3C3C;" d="M170.473,512c-64.178,0-116.39-52.212-116.39-116.39V196.288C54.083,88.054,142.136,0,250.37,0  h11.259c108.234,0,196.289,88.054,196.289,196.288c0,99.322-74.046,182.228-171.055,194.674v4.648  C286.863,459.788,234.651,512,170.473,512z"/>
+                          <path style="fill:#DA0806;" d="M261.629,0H256v474.462c19.147-20.752,30.863-48.457,30.863-78.852v-4.648  c97.009-12.446,171.055-95.352,171.055-194.674C457.917,88.054,369.863,0,261.629,0z"/>
+                          <path style="fill:#FFFFFF;" d="M261.629,59.849h-11.259c-75.232,0-136.44,61.209-136.44,136.44v199.318  c0,31.182,25.362,56.544,56.544,56.544c31.172,0,56.534-25.362,56.534-56.544V332.73h34.62c75.232,0,136.44-61.209,136.44-136.44  S336.861,59.849,261.629,59.849z M261.629,249.798h-49.699c-8.323,0-15.079-6.745-15.079-15.079v-38.43  c0-29.514,24.005-53.519,53.519-53.519h11.259c29.514,0,53.519,24.005,53.519,53.519  C315.148,225.793,291.143,249.798,261.629,249.798z"/>
+                          <path style="fill:#DCE1EB;" d="M261.629,59.849H256v82.922h5.629c29.514,0,53.519,24.005,53.519,53.519  c0,29.504-24.005,53.509-53.519,53.509H256v82.932h5.629c75.232,0,136.44-61.209,136.44-136.44S336.861,59.849,261.629,59.849z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                        <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted p-2">82$+</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center ">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg viewBox="0 0 38 57" class="font-icon">
+                          <path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+                          <path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+                          <path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+                          <path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+                          <path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                        <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted p-2">82$+</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center ">
+                    <div class="d-flex align-items-center ">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 -32 512.0001 512">
+                          <path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875-18.980469 10.761718-38.539063 18.089843-58.351563 20.597656l-.9375.117187h-1.128906c-4.492187 0-20.65625-1.796875-39.835937-24.941406-22.257813-26.855469-41.445313-73.144531-57.042969-137.585937l-.027344-.136719c-.203125-.839844-19.761718-84.378907-49.304687-143.738281l-.210938-.449219c-.050781-.109375-5.480469-11.660157-18.21875-11.660157-7.308593 0-15.617187 3.652344-24.703125 10.863282-9.195312 7.308594-22.296875 5.988281-29.824218-2.988282-7.207032-8.605468-6.648438-21.066406 1.308593-28.984374 22.585938-22.484376 69.582031-69.261719 106.015625-87.722657 2.816406-1.429687 5.808594-2.675781 9.144532-3.804687h.011718c18.871094-6.378906 39.027344-4.890625 56.761719 4.175781 17.632813 9.015625 30.542969 24.371094 36.371094 43.242187 3.386719 10.960938 6.070312 23.53125 8 37.378907l.027343.210937c2.964844 23.84375 9.464844 69.863282 19.710938 110.167969 15.886719 62.464844 30.300781 70.992187 33.027344 72.058594l.25.109375c.03125.011718.789062.320312 2.207031.320312 2.046875 0 4.292969-.378906 6.75-1.289062 15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#6aa9ff"/><path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875v-144.058594c15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#2682ff"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                        <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted p-2">82$+</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row mb-4">
+          <div class="col-12 col-lg-4">
+            <div class="card border-0 rounded h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">من رقبا</h6>
+                  <span class="text-muted opacity-50 fs-12">بیش از 400+ عضو جدیدش</span>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body scroll-y">
+                <div class="content-box margin-between">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded ms-2">
+                        <img src="../images/img-3.jpg" class="rounded" alt="" >
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">جام و سبز</a>
+                        <span class="text-muted opacity-50 d-block">انواع بزرگراه ها را مطالعه کنید</span>
+                        <span class="text-muted opacity-50 d-block ">توسط:
+                                                    <a href="" class="text-primary fs-12">CoreAd</a>
+                                                </span>
+                      </div>
+                    </div>
+                    <div class="text-start">
+                      <span class="fw-bolder fs-6">24,900</span>
+                      <span class="text-muted opacity-50 d-block">فروش</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded ms-2">
+                        <img src="../images/img-4.jpg" class="rounded" alt="" >
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">جام و سبز</a>
+                        <span class="text-muted opacity-50 d-block">انواع بزرگراه ها را مطالعه کنید</span>
+                        <span class="text-muted opacity-50 d-block ">توسط:
+                                                    <a href="" class="text-primary fs-12">CoreAd</a>
+                                                </span>
+                      </div>
+                    </div>
+                    <div class="text-start">
+                      <span class="fw-bolder fs-6">24,900</span>
+                      <span class="text-muted opacity-50 d-block">فروش</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded ms-2">
+                        <img src="../images/img-3.jpg" class="rounded" alt="" >
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">جام و سبز</a>
+                        <span class="text-muted opacity-50 d-block">انواع بزرگراه ها را مطالعه کنید</span>
+                        <span class="text-muted opacity-50 d-block ">توسط:
+                                                    <a href="" class="text-primary fs-12">CoreAd</a>
+                                                </span>
+                      </div>
+                    </div>
+                    <div class="text-start">
+                      <span class="fw-bolder fs-6">24,900</span>
+                      <span class="text-muted opacity-50 d-block">فروش</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded ms-2">
+                        <img src="../images/img-4.jpg" class="rounded" alt="" >
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">جام و سبز</a>
+                        <span class="text-muted opacity-50 d-block">انواع بزرگراه ها را مطالعه کنید</span>
+                        <span class="text-muted opacity-50 d-block ">توسط:
+                                                    <a href="" class="text-primary fs-12">CoreAd</a>
+                                                </span>
+                      </div>
+                    </div>
+                    <div class="text-start">
+                      <span class="fw-bolder fs-6">24,900</span>
+                      <span class="text-muted opacity-50 d-block">فروش</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded ms-2">
+                        <img src="../images/img-3.jpg" class="rounded" alt="" >
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">جام و سبز</a>
+                        <span class="text-muted opacity-50 d-block">انواع بزرگراه ها را مطالعه کنید</span>
+                        <span class="text-muted opacity-50 d-block ">توسط:
+                                                    <a href="" class="text-primary fs-12">CoreAd</a>
+                                                </span>
+                      </div>
+                    </div>
+                    <div class="text-start">
+                      <span class="fw-bolder fs-6">24,900</span>
+                      <span class="text-muted opacity-50 d-block">فروش</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8 mt-3 mt-lg-0">
+            <div class="card border-0 rounded h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">اعضا آمار</h6>
+                  <span class="text-muted opacity-50 fs-12">بالای 500 عضو</span>
+                </div>
+                <div class="card-toolbar " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-bs-original-title="برای افزودن کاربر کلیک کنید" data-kt-initialized="1">
+                  <a href="#" class="btn theme-bg fs-12 px-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
+                    <svg class="font-icon" viewBox="0 0 24 24" fill="none" >
+                      <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
+                      <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor"></rect>
+                    </svg>
+                    عضو جدید
+                  </a>
+                </div>
+              </div>
+              <div class="card-body scroll-y">
+                <div class="table-responsive content-box">
+                  <table class="table align-middle">
+                    <thead>
+                    <tr>
+                      <th class="fs-12 pe-0">
+                        <div class="form-check form-check-solid ps-0">
+                          <input class="form-check-input" type="checkbox" id="checkAll" value="">
+                          <!--                                                    <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check">-->
+                        </div>
+                      </th>
+                      <th class="fs-12 text-muted opacity-75">نویسندگان
+                      </th>
+                      <th class="fs-12 text-muted opacity-75 ">کمپانی</th>
+                      <th class="fs-12 text-muted opacity-75 ">پردازش</th>
+                      <th class="fs-12 text-muted opacity-75 text-start ps-0 ">عملیات</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="pe-0">
+                        <div class="form-check form-check-solid ps-0">
+                          <input class="form-check-input" type="checkbox" value="1">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <div class="profile-img ms-2">
+                            <img src="../images/300-6.jpg" class="w-100 h-100 rounded" alt="profile">
+                          </div>
+                          <div>
+                            <a href="#" class="fw-bold fs-12  d-block">محمد رضایی</a>
+                            <span class="text-muted opacity-50">HTML, JS, ReactJS</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <a href="#" class="fw-bold d-block fs-12">ساتراس</a>
+                        <span class="text-muted opacity-50">طراحی وب</span>
+                      </td>
+                      <td>
+                        <div class="d-flex flex-column w-100">
+                          <span class="text-muted opacity-50 fw-bold">50%</span>
+                          <div class="progress w-100">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>                                                    </div>
+                        </div>
+                      </td>
+                      <td class="ps-0">
+                        <div class="d-flex justify-content-end">
+                          <ul class="d-flex flex-row gap-1">
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                                  <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                                  <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pe-0">
+                        <div class="form-check form-check-solid ps-0">
+                          <input class="form-check-input" type="checkbox" value="1">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <div class="profile-img ms-2">
+                            <img src="../images/300-6.jpg" class="w-100 h-100 rounded" alt="profile">
+                          </div>
+                          <div>
+                            <a href="#" class="fw-bold fs-12  d-block">محمد رضایی</a>
+                            <span class="text-muted opacity-50">HTML, JS, ReactJS</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <a href="#" class="fw-bold d-block fs-12">ساتراس</a>
+                        <span class="text-muted opacity-50">طراحی وب</span>
+                      </td>
+                      <td>
+                        <div class="d-flex flex-column w-100">
+                          <span class="text-muted opacity-50 fw-bold">70%</span>
+                          <div class="progress w-100">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="ps-0">
+                        <div class="d-flex justify-content-end">
+                          <ul class="d-flex flex-row gap-1">
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                                  <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                                  <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pe-0">
+                        <div class="form-check form-check-solid ps-0">
+                          <input class="form-check-input" type="checkbox" value="1">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <div class="profile-img ms-2">
+                            <img src="../images/300-6.jpg" class="w-100 h-100 rounded" alt="profile">
+                          </div>
+                          <div>
+                            <a href="#" class="fw-bold fs-12  d-block">محمد رضایی</a>
+                            <span class="text-muted opacity-50">HTML, JS, ReactJS</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <a href="#" class="fw-bold d-block fs-12">ساتراس</a>
+                        <span class="text-muted opacity-50">طراحی وب</span>
+                      </td>
+                      <td>
+                        <div class="d-flex flex-column w-100">
+                          <span class="text-muted opacity-50 fw-bold">60%</span>
+                          <div class="progress w-100">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="ps-0">
+                        <div class="d-flex justify-content-end">
+                          <ul class="d-flex flex-row gap-1">
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                                  <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                                  <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pe-0">
+                        <div class="form-check form-check-solid ps-0">
+                          <input class="form-check-input" type="checkbox" value="1">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <div class="profile-img ms-2">
+                            <img src="../images/300-6.jpg" class="w-100 h-100 rounded" alt="profile">
+                          </div>
+                          <div>
+                            <a href="#" class="fw-bold fs-12  d-block">محمد رضایی</a>
+                            <span class="text-muted opacity-50">HTML, JS, ReactJS</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <a href="#" class="fw-bold d-block fs-12">ساتراس</a>
+                        <span class="text-muted opacity-50">طراحی وب</span>
+                      </td>
+                      <td>
+                        <div class="d-flex flex-column w-100">
+                          <span class="text-muted opacity-50 fw-bold">90%</span>
+                          <div class="progress w-100">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="ps-0">
+                        <div class="d-flex justify-content-end ">
+                          <ul class="d-flex flex-row gap-1">
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                                  <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                                  <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                                  <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                                <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                                  <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                                </svg>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row mb-4">
+          <div class="col-12 col-lg-4">
+            <div class="card border-0 rounded h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">روندها</h6>
+                  <span class="text-muted opacity-50 fs-12">
+                                    جدیدترین روندهای فناوری
+                                    </span>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body scroll-y">
+                <div class="content-box margin-between">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 0 512 512">
+                          <path style="fill:#FF3C3C;" d="M170.473,512c-64.178,0-116.39-52.212-116.39-116.39V196.288C54.083,88.054,142.136,0,250.37,0  h11.259c108.234,0,196.289,88.054,196.289,196.288c0,99.322-74.046,182.228-171.055,194.674v4.648  C286.863,459.788,234.651,512,170.473,512z"></path>
+                          <path style="fill:#DA0806;" d="M261.629,0H256v474.462c19.147-20.752,30.863-48.457,30.863-78.852v-4.648  c97.009-12.446,171.055-95.352,171.055-194.674C457.917,88.054,369.863,0,261.629,0z"></path>
+                          <path style="fill:#FFFFFF;" d="M261.629,59.849h-11.259c-75.232,0-136.44,61.209-136.44,136.44v199.318  c0,31.182,25.362,56.544,56.544,56.544c31.172,0,56.534-25.362,56.534-56.544V332.73h34.62c75.232,0,136.44-61.209,136.44-136.44  S336.861,59.849,261.629,59.849z M261.629,249.798h-49.699c-8.323,0-15.079-6.745-15.079-15.079v-38.43  c0-29.514,24.005-53.519,53.519-53.519h11.259c29.514,0,53.519,24.005,53.519,53.519  C315.148,225.793,291.143,249.798,261.629,249.798z"></path>
+                          <path style="fill:#DCE1EB;" d="M261.629,59.849H256v82.922h5.629c29.514,0,53.519,24.005,53.519,53.519  c0,29.504-24.005,53.509-53.519,53.509H256v82.932h5.629c75.232,0,136.44-61.209,136.44-136.44S336.861,59.849,261.629,59.849z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                        <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg viewBox="0 0 38 57" class="font-icon">
+                          <path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"></path>
+                          <path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"></path>
+                          <path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"></path>
+                          <path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"></path>
+                          <path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"></path>
+                        </svg>
+                      </div>                                            <div>
+                      <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                      <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                    </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 -32 512.0001 512">
+                          <path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875-18.980469 10.761718-38.539063 18.089843-58.351563 20.597656l-.9375.117187h-1.128906c-4.492187 0-20.65625-1.796875-39.835937-24.941406-22.257813-26.855469-41.445313-73.144531-57.042969-137.585937l-.027344-.136719c-.203125-.839844-19.761718-84.378907-49.304687-143.738281l-.210938-.449219c-.050781-.109375-5.480469-11.660157-18.21875-11.660157-7.308593 0-15.617187 3.652344-24.703125 10.863282-9.195312 7.308594-22.296875 5.988281-29.824218-2.988282-7.207032-8.605468-6.648438-21.066406 1.308593-28.984374 22.585938-22.484376 69.582031-69.261719 106.015625-87.722657 2.816406-1.429687 5.808594-2.675781 9.144532-3.804687h.011718c18.871094-6.378906 39.027344-4.890625 56.761719 4.175781 17.632813 9.015625 30.542969 24.371094 36.371094 43.242187 3.386719 10.960938 6.070312 23.53125 8 37.378907l.027343.210937c2.964844 23.84375 9.464844 69.863282 19.710938 110.167969 15.886719 62.464844 30.300781 70.992187 33.027344 72.058594l.25.109375c.03125.011718.789062.320312 2.207031.320312 2.046875 0 4.292969-.378906 6.75-1.289062 15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#6aa9ff"></path><path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875v-144.058594c15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#2682ff"></path>
+                        </svg>
+                      </div>                                            <div>
+                      <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                      <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                    </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 0 512 512">
+                          <path style="fill:#FF3C3C;" d="M170.473,512c-64.178,0-116.39-52.212-116.39-116.39V196.288C54.083,88.054,142.136,0,250.37,0  h11.259c108.234,0,196.289,88.054,196.289,196.288c0,99.322-74.046,182.228-171.055,194.674v4.648  C286.863,459.788,234.651,512,170.473,512z"></path>
+                          <path style="fill:#DA0806;" d="M261.629,0H256v474.462c19.147-20.752,30.863-48.457,30.863-78.852v-4.648  c97.009-12.446,171.055-95.352,171.055-194.674C457.917,88.054,369.863,0,261.629,0z"></path>
+                          <path style="fill:#FFFFFF;" d="M261.629,59.849h-11.259c-75.232,0-136.44,61.209-136.44,136.44v199.318  c0,31.182,25.362,56.544,56.544,56.544c31.172,0,56.534-25.362,56.534-56.544V332.73h34.62c75.232,0,136.44-61.209,136.44-136.44  S336.861,59.849,261.629,59.849z M261.629,249.798h-49.699c-8.323,0-15.079-6.745-15.079-15.079v-38.43  c0-29.514,24.005-53.519,53.519-53.519h11.259c29.514,0,53.519,24.005,53.519,53.519  C315.148,225.793,291.143,249.798,261.629,249.798z"></path>
+                          <path style="fill:#DCE1EB;" d="M261.629,59.849H256v82.922h5.629c29.514,0,53.519,24.005,53.519,53.519  c0,29.504-24.005,53.509-53.519,53.509H256v82.932h5.629c75.232,0,136.44-61.209,136.44-136.44S336.861,59.849,261.629,59.849z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                        <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg viewBox="0 0 38 57" class="font-icon">
+                          <path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"></path>
+                          <path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"></path>
+                          <path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"></path>
+                          <path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"></path>
+                          <path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"></path>
+                        </svg>
+                      </div>                                            <div>
+                      <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                      <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                    </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="social-network bg-light rounded d-flex align-items-center justify-content-center ms-3">
+                        <svg class="font-icon" viewBox="0 -32 512.0001 512">
+                          <path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875-18.980469 10.761718-38.539063 18.089843-58.351563 20.597656l-.9375.117187h-1.128906c-4.492187 0-20.65625-1.796875-39.835937-24.941406-22.257813-26.855469-41.445313-73.144531-57.042969-137.585937l-.027344-.136719c-.203125-.839844-19.761718-84.378907-49.304687-143.738281l-.210938-.449219c-.050781-.109375-5.480469-11.660157-18.21875-11.660157-7.308593 0-15.617187 3.652344-24.703125 10.863282-9.195312 7.308594-22.296875 5.988281-29.824218-2.988282-7.207032-8.605468-6.648438-21.066406 1.308593-28.984374 22.585938-22.484376 69.582031-69.261719 106.015625-87.722657 2.816406-1.429687 5.808594-2.675781 9.144532-3.804687h.011718c18.871094-6.378906 39.027344-4.890625 56.761719 4.175781 17.632813 9.015625 30.542969 24.371094 36.371094 43.242187 3.386719 10.960938 6.070312 23.53125 8 37.378907l.027343.210937c2.964844 23.84375 9.464844 69.863282 19.710938 110.167969 15.886719 62.464844 30.300781 70.992187 33.027344 72.058594l.25.109375c.03125.011718.789062.320312 2.207031.320312 2.046875 0 4.292969-.378906 6.75-1.289062 15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#6aa9ff"></path><path d="m507.214844 126.574219c-4.992188 22.652343-13.480469 44.96875-25.210938 66.324219-32.53125 59.199218-108.800781 184.054687-197.363281 234.21875v-144.058594c15.335937-5.648438 38.769531-31.777344 71.078125-113.703125l.0625-.136719c.089844-.210938.078125-.210938.429688-1.089844l.707031-1.855468c1.757812-4.523438 2.734375-9.085938 2.914062-13.5625.261719-6.609376-.617187-16.035157-6.289062-23.382813-6.597657-8.535156-17.664063-12.28125-33.816407-11.390625-7.617187.417969-14.71875-3.136719-18.972656-9.496094s-4.820312-14.269531-1.527344-21.167968c10.175782-21.285157 27.707032-42.152344 48.105469-57.25 26.53125-19.640626 58.070313-30.023438 91.207031-30.023438h.113282c1.507812.0195312 37.082031.648438 59.148437 33.546875 14.945313 22.296875 18.109375 53.597656 9.414063 93.027344zm0 0" fill="#2682ff"></path>
+                        </svg>
+                      </div>                                            <div>
+                      <a href="#" class="fw-bold fs-12">بالا نویسندگان</a>
+                      <span class="text-muted opacity-50 d-block fs-12">جمشیدی</span>
+                    </div>
+                    </div>
+                    <span class="badge bg-light text-muted fw-bold">+82$</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 my-3 my-lg-0">
+            <div class="card border-0 rounded activities h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">فعالیت ها</h6>
+                  <span class="text-muted opacity-50 fs-12">890,344 فروش</span>
+                </div>
+                <div class="card-toolbar">
+                  <button type="button" class="btn btn-sm btn-setting">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body scroll-y">
+                <div class="timeline margin-between position-relative ">
+                  <div class="timeline-item">
+                    <div class="timeline-label">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content m-1">
+                      <div class="circle border border-2 border-danger"></div>
+                      <span class="text-muted opacity-50 d-block me-4">رئوس مطالب شما را صادق نگه می دارد. و ساختار را حفظ کنید</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item ">
+                    <div class="timeline-label ">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content me-1">
+                      <div class="circle border border-2 border-primary"></div>
+                      <span class="d-block me-4">زمان ملاقات</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-label ">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content me-1">
+                      <div class="circle border border-2 border-success"></div>
+                      <span class="d-block me-4">سپرده گذاری کنید</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-label ">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content me-1">
+                      <div class="circle border border-2 border-warning"></div>
+                      <span class="text-muted opacity-50 d-block me-4">لذت بردن از رانندگی ضعیف و حفظ ساختار عالی است</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-label ">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content me-1">
+                      <div class="circle border border-2 border-secondary"></div>
+                      <span class="d-block me-4">سفارش جدید</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item ">
+                    <div class="timeline-label ">
+                      <span>08:22</span>
+                    </div>
+                    <div class="timeline-content me-1">
+                      <div class="circle border border-2 border-primary"></div>
+                      <span class="text-muted opacity-50 d-block me-4">جلسه آماده سازی راه اندازی اپلیکیشن موبایل دارایی، مالیه، سرمایه گذاری </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card border-0 rounded h-scroll">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6 class="mb-0">انجام دادن</h6>
+                </div>
+                <div class="card-toolbar">
+                  <button type="button" class="btn btn-sm btn-setting">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body scroll-y">
+                <div class="content-box margin-between">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="line-badge bg-success"></span>
+                      <div class="form-check form-check-solid d-flex align-items-center pe-0 m-0 mx-3">
+                        <input class="form-check-input  border-0" type="checkbox" value="">
+                      </div>
+                      <div>
+                        <a href="" class="fw-bold fs-12">ساختن لگو فروشگاه</a>
+                        <span class="text-muted opacity-50 d-block fs-12">سررسید در 2 روز</span>
+                      </div>
+
+                    </div>
+                    <span class="badge badge-light-success">جدید</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="line-badge bg-primary"></span>
+                      <div class="form-check form-check-solid d-flex align-items-center pe-0 m-0 mx-3">
+                        <input class="form-check-input border-0" type="checkbox" value="">
+                      </div>
+                      <div>
+                        <a href="" class="fw-bold fs-12">جلسه ذینفعان</a>
+                        <span class="text-muted opacity-75 d-block fs-12">سررسید سه روز</span>
+                      </div>
+
+                    </div>
+                    <span class="badge badge-light-primary">جدید</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="line-badge bg-warning"></span>
+                      <div class="form-check form-check-solid d-flex align-items-center pe-0 m-0 mx-3">
+                        <input class="form-check-input border-0" type="checkbox" value="">
+                      </div>
+                      <div>
+                        <a href="" class="fw-bold fs-12">ویترین برنامه</a>
+                        <span class="text-muted opacity-75 d-block fs-12">سررسید در 2 روز</span>
+                      </div>
+
+                    </div>
+                    <span class="badge badge-light-warning">جدید</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="line-badge bg-danger"></span>
+                      <div class="form-check form-check-solid d-flex align-items-center pe-0 m-0 mx-3">
+                        <input class="form-check-input border-0" type="checkbox" value="">
+                      </div>
+                      <div>
+                        <a href="" class="fw-bold fs-12" >ملاقات پروژه ها</a>
+                        <span class="text-muted opacity-75 d-block fs-12">سررسید در 2 روز</span>
+                      </div>
+
+                    </div>
+                    <span class="badge badge-light-danger">جدید</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="line-badge bg-success"></span>
+                      <div class="form-check form-check-solid d-flex align-items-center pe-0 m-0 mx-3">
+                        <input class="form-check-input border-0" type="checkbox" value="">
+                      </div>
+                      <div>
+                        <a href="" class="fw-bold fs-12">ساختن لگو فروشگاه</a>
+                        <span class="text-muted opacity-75 d-block fs-12">سررسید در 2 روز</span>
+                      </div>
+
+                    </div>
+                    <span class="badge badge-light-success">جدید</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row mb-4">
+          <div class="col-12">
+            <div class="card border-0 rounded h-scroll">
+              <div class="card-header border-0  d-flex justify-content-between align-items-center">
+                <div class="card-title mb-0">
+                  <h6>لیست تراکنش ها</h6>
+                </div>
+                <div class="card-toolbar position-relative">
+                  <button type="button" class="btn btn-sm btn-setting border-0">
+                    <svg class="font-icon theme-color" viewBox="0 0 24 24">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect>
+                        <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                        <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect>
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="menu-sub box-shadow bg-white p-2 rounded position-absolute">
+                    <ul class="d-flex flex-column opacity-100">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">اشتراک</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">
+                          ساختن فاکتور
+                          <i class="fa-solid text-muted fa-exclamation-circle me-2"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">پرداخت ها</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body content-box scroll-y">
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-success ">تایید شده</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0 text-center">
+                    <span class="badge badge-light-warning">درحال پردازش</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-info">رد شد</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-danger">موفقیت آمیز</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-success ">تایید شده</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="d-md-none">
+  <div class="footer-mobile">
+    <ul class="navigation-mobile  w-100 d-flex align-items-center justify-content-around">
+      <li>
+        <a href="">
+          <i class="fa-solid fa-plus"></i>
+          <span class="d-inline-block mt-2 font12 " >تسک جدید</span>
+        </a>
+      </li>
+      <li>
+        <a href="" class="icon-dashboard">
+          <i class="fa-solid fa-home"></i>
+          <span class="d-inline-block mt-2 font12">داشبورد</span>
+        </a>
+      </li>
+      <li >
+        <a href="">
+          <i class="fa-solid fa-plus"></i>
+          <span class="d-inline-block mt-2 font12" >تسک جدید</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+</body>
+</html>

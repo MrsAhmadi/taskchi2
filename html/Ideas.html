@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسک چی - ایده ها</title>
+    <link rel="stylesheet" href="../Css/normalize.css">
+    <link rel="stylesheet" href="../Css/fontawesome.css">
+    <link rel="stylesheet" href="../Css/solid.css">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/style-ltr.css">
+    <link rel="stylesheet" href="../Css/dark.css">
+    <link rel="stylesheet" href="../Css/Responsive.css">
+    <script src="../myScript/jquery-3.6.0.min.js"></script>
+    <script src="../myScript/bootstrap.min.js"></script>
+    <script src="../myScript/js.js"></script>
+
+
+</head>
+<body>
+<!-- Modal -->
+<div id="logout-modal" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">هشدار</h4>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p class="text-muted">آیا از خروج مطمئن هستید؟</p>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger px-4">خروج</button>
+                <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">بازگشت</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of modal-->
+<header class="col-12 col-xl-10 col-lg-9 col-md-8  sticky-top me-auto bg-white shadow-sm py-3" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 col d-md-none">
+                <button class="navbar-toggler hamburger-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col-7 col-md-7 col-lg-6">
+                <form  action="">
+                    <div class="input-group d-flex align-items-center">
+                        <label for="company-selection" class="form-label mr-2 fw-bold text-dark mb-0 ">شرکت جاری</label>
+                        <select class="form-control rounded" name="company-selection" id="company-selection">
+                            <option value="">...</option>
+                            <option value="0">ثبت شرکت جدید</option>
+                            <option value="1">شخصی عباس کاشی</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-3 col-md-5 col-lg-6">
+                <ul class="navbar-nav flex-row justify-content-end ">
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link  rounded px-2 px-md-3 font-weight-bold " role="button" id="btn-newTask">
+                            تسک جدید
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-2 px-md-3 ml-3 font-weight-bold " href="#logout-modal" data-bs-toggle="modal"  id="btn-exit">
+                            خروج
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!--باکس تنظیمات قالب-->
+<div class="box-setting">
+    <div class="d-flex align-items-center gap-3">
+        <div>
+            <button class="btn setting-btn ">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </button>
+        </div>
+        <div class="bg-white shadow rounded p-2 d-flex flex-column gap-3">
+            <div class="dark-Mode">
+                <h6 class="mb-3 fw-bold">تغییر حالت دارک</h6>
+                <div class="form-check form-switch switch-theme-mode  p-0">
+                    <label id="switch" class="form-check-label switch position-relative d-inline-block  rounded" for="nightModeSwitch">
+                        <input type="checkbox" id="nightModeSwitch" class="">
+                        <span class="slider "></span>
+                    </label>
+                </div>
+            </div>
+            <div class="box-theme">
+                <h6 class="mb-3 fw-bold">تغییر تم قالب</h6>
+                <ul class="list-color list-unstyled d-flex flex-wrap align-items-center gap-2">
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#24695C33" value="#24695c"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#7c282845" value="#8B0000FF"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#2d698733" value="#2d6987"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#181c3247" value="#181c32"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#6610f22b" value="#9c6ce9"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#ff7f5038" value="#FF7F50FF"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#f75f9630" value="#f75f96"></button>
+                    </li>
+
+                    <li>
+                        <button role="button" class="btn btn-color " data-color="#28eded21" value="#28eded"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-xl-2 col-lg-3 col-md-4 bg-white sidebar">
+            <button type="button" class="closed d-block d-md-none mt-2 ms-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="sidebar-user border-bottom ">
+                <div class=" box-user-profile">
+                    <div id="edit-profile" class="d-flex justify-content-center  align-items-center mt-3 setting-list">
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="user-profile">
+                        <img src="../images/profile.png" alt="profile">
+                    </a>
+                    <a href="#" id="user-name">
+                        <h6>
+                            خانم احمدی
+                        </h6>
+                    </a>
+                    <span id="user-number">09139096707</span>
+                </div>
+                <div class=" work-hours">
+                    <ul>
+                        <li title="کارکرد ماه جاری">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                        <li title="کارکرد هفته جاری">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                        <li title="کارکرد امروز">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sidebar-menu">
+                <ul class="nav-bar list-unstyled font-weight-bold mx-2 " id="accordion-menu">
+                    <li class="nav-item current">
+                        <a class="nav-link "  >
+                            داشبورد
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link accordion-button" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            اطلاعات اولیه
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseOne" class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+                            <li><a href="#">شرکت های من</a></li>
+                            <li><a href="#" >پروژه های من</a></li>
+                            <li><a href="#" >گروه های من</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            تسک ها
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseTwo"  class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+                            <li><a href="#">تسک های شرکت</a></li>
+                            <li><a href="#">تسک های شرکت - روزانه</a></li>
+                            <li><a href="#">کارکردها</a></li>
+                            <li><a href="#">کارکردها - تایم لاین</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            گزارشات
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseThree" class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu" >
+                            <li><a  href="#" >مجموع کارکرد</a></li>
+                            <li><a href="#"  >پروژه ها</a></li>
+                            <li><a href="#" >ماهانه پروژه ها</a></li>
+                            <li><a href="#">پرسنل</a></li>
+                            <li><a href="#" >ماهانه پرسنل</a></li>
+                            <li><a href="#" >تسک ها</a></li>
+                            <li><a href="#">زمان پیش بینی</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-xl-10 col-lg-9 col-md-8 me-auto py-4">
+            <div class="container">
+                <section id="my-ideas">
+                    <div class="card" >
+                        <div class="card-header">
+                            <h5>ایده های من</h5>
+                        </div>
+                        <div class="card-body mt-4 mt-md-5">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="submit" class="btn-record ms-3 ms-md-0">ثبت</button>
+                                <div class="table-filter d-flex align-items-center ">
+                                    <label for="search" class="form-label m-0">جستجو:</label>
+                                    <input type="search" id="search" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <div class="table-responsive my-3 my-md-5">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>عنوان</th>
+                                        <th>کاربر</th>
+                                        <th>زمان ثبت</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 d-block d-md-flex align-items-center ">
+                            <div class="col-md-4 ">
+                                <span class="font12  ">
+                                    نمایش 0 تا 5 از 5 مورد
+                                </span>
+                            </div>
+                            <div class="col-md-8 d-flex justify-content-between align-items-center my-2 my-md-0" >
+                                <ul class="pagination d-flex justify-content-center" style="direction:ltr" >
+                                    <li class="page-item"><a class="page-link font12 " href="#">بعدی</a></li>
+                                    <li class="page-item"><a class="page-link active font12"  href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link  font12"  href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link  font12"  href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link font12 " href="#">قبلی</a></li>
+                                </ul>
+                                <div class="d-flex justify-content-end">
+                                    <label for="number-lines"></label>
+                                    <select id="number-lines" name="number-lines" class="form-control font12 ">
+                                        <option value="10" selected>10</option>
+                                        <option value="25" >25</option>
+                                        <option value="50" >50</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+<footer class="d-md-none">
+    <div class="footer-mobile">
+        <ul class="navigation-mobile  w-100 d-flex align-items-center justify-content-around">
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="d-inline-block mt-2 font12 " >تسک جدید</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon-dashboard">
+                    <i class="fa-solid fa-home"></i>
+                    <span class="d-inline-block mt-2 font12">داشبورد</span>
+                </a>
+            </li>
+            <li >
+                <a href="">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="d-inline-block mt-2 font12" >تسک جدید</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

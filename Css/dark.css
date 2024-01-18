@@ -1,0 +1,162 @@
+:root {
+    --background-color: #242424; /* رنگ پس‌زمینه تاریک */
+    --text-color-dark: #ffffff; /* رنگ متن سفید */
+    --text-color-muted: #dadada; /* رنگ متن خاکستری */
+    --button-background: #333333; /* رنگ پس‌زمینه دکمه‌ها */
+    --sub-background: #3e3e3e; /* رنگ پس‌زمینه دکمه‌ها */
+    --button-text: #ffffff; /* رنگ متن دکمه‌ها */
+    --button-hover: #555555; /* رنگ هاور دکمه‌ها */
+    --box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 10%), -2px -2px 5px 0px rgb(0 0 0 / 10%);/* شادو باکس ها   */
+}
+
+body.dark-theme {
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+}
+/*theme switch dark*/
+.switch {
+    width: 50px;
+    height: 24px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+input:checked + .slider {
+    background-color: #000;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url(../images/sunny.png) no-repeat center;
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 0;
+    bottom:0;
+    top: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-box-shadow: 0 0px 15px #2020203d;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url(https://i.ibb.co/7JfqXxB/night.png) no-repeat center;
+
+    border-radius: 50%;
+}
+
+/*.dark-theme .btn {*/
+/*!*    background-color: var(--button-background);*!*/
+/*    color: var(--button-text);*/
+/*!*    transition: background-color 0.3s ease;*!*/
+/*}*/
+
+/*.dark-theme .btn:hover {*/
+/*    background-color: var(--button-hover);*/
+/*}*/
+.dark-theme .bg-white,.dark-theme .form-control,.dark-theme .card{
+    background-color:var(--button-background)!important;
+    color: var(--button-text);
+}
+.dark-theme .form-label,
+.dark-theme .form-label.text-dark,
+.dark-theme .col-form-label,
+.dark-theme a,
+.dark-theme #dashboard label,
+.dark-theme .table,
+.dark-theme .table td,
+.dark-theme .pagination .page-link.active{
+    color: var(--button-text)!important;
+}
+.dark-theme .text-muted,.dark-theme .text-secondary{
+    color: var(--text-color-muted)!important;
+}
+.dark-theme #btn-exit {
+    color: var(--main-color)!important;
+}
+.dark-theme .box-setting .bg-white,
+.dark-theme .box-setting .setting-btn{
+    background-color:var(--sub-background)!important;
+    color:var(--button-text) ;
+    box-shadow: var(--box-shadow)!important;
+}
+.dark-theme .modal-content{
+   background-color: var(--background-color) ;
+}
+.dark-theme .ui-datepicker td .ui-state-default{
+    color: gray!important;
+}
+.dark-theme #login .login-select a{
+    color: var(--main-color)!important;
+}
+.dark-theme #login .input-group input {
+    background-color: transparent;
+    color:var(--button-text)!important ;
+}
+.dark-theme .theme-color, .theme-color:focus, .theme-color:active, .theme-color:hover {
+    border-color: var(--main-color);
+    background-color:transparent;
+    color: var(--main-color);
+}
+.dark-theme .smg-out p,
+.dark-theme .smg-in p
+/*.dark-theme .card-toolbar .menu-sub .nav-link*/
+{
+    color: var(--background-color)!important;
+}
+.dark-theme .card-toolbar .menu-sub,
+.dark-theme .my-task ul.menu-details,
+.dark-theme .my-task ul.menu-details .menu-sub,
+.dark-theme .my-task .overlay,
+.dark-theme .footer-mobile{
+    background-color:var(--sub-background)!important;
+    color: #ffffff;
+    box-shadow: var(--box-shadow)!important;
+}
+.dark-theme .pagination .page-link{
+    background-color:transparent!important;
+}
+.dark-theme .pagination .page-link.active {
+    background-color:var(--main-color)!important;
+    border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);!important;
+}
+.dark-theme .my-task ul.menu-details::before{
+    border-bottom-color:var(--sub-background)!important;
+    box-shadow: var(--box-shadow)!important;
+}
+.dark-theme .btn-style{
+    background:var(--button-background);
+}
+.dark-theme .btn-style:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+}
+.dark-theme .timeline .btn{
+    color: var(--button-text);
+}
+.dark-theme .hamburger-button span{
+    background-color: var(--button-text) ;
+}
+.dark-theme ul.navigation-mobile li a i{
+    background-color:var(--button-background)!important;
+    color: #ffffff;
+}

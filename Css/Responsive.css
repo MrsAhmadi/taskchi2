@@ -1,0 +1,95 @@
+@media screen and (min-width: 768px) {
+.sidebar{
+    transform:none ;
+}
+}
+/*for tablet*/
+@media screen and (max-width: 991px) {
+    .table-responsive table,.table-responsive thead,
+    .table-responsive tbody,.table-responsive th,
+    .table-responsive tr,.table-responsive td{
+        display: block;
+    }
+    .table-responsive thead tr {
+        display: none;
+    }
+    .table-responsive tr {
+        border: 1px solid #ccc;
+    }
+    .table-responsive td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-right: 30%;
+        white-space: normal;
+        text-align: right;
+    }
+    .table-responsive td:before {
+        position: absolute;
+        top:50%;
+        right: 6px;
+        transform: translateY(-50%);
+        width: 30%;
+        padding-left: 10px;
+        white-space: nowrap;
+        text-align: right;
+        font-weight: bold;
+    }
+    .table-responsive td:before{
+        content: attr(data-bs-original-title);
+    }
+}
+/*For Mobiles*/
+@media screen  and (max-width: 767px) {
+    #login .card{
+        width:auto;
+    }
+    .sidebar {
+        width: 75%;
+        transform: translateX(100%);
+        transition: all .1ms;
+        visibility: hidden;
+    }
+    .open-sidebar {
+        transform: none;
+        transition: all 0.5s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+        visibility: visible;
+    }
+
+    .setting-list{
+        margin-right: 10px;
+    }
+    .user-profile:link,.user-profile:visited{
+        margin-top:-10px;
+    }
+    .form-label, .col-form-label, .form-control {
+        font-size: 12px;
+    }
+    .paginate-table p {
+        font-size: 12px;
+    }
+    .card-header h5 {
+        font-size: 18px;
+    }
+    select option {
+        font-size: 10px;
+    }
+    .closed span:first-of-type {
+        transform: rotate(45deg) translate(5px, 5px);
+        background: red;
+    }
+    .closed span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .closed span:last-of-type {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background: red;
+    }
+    .font12{
+        font-size: 12px;
+    }
+    .box-search{
+        display: none;
+    }
+
+}

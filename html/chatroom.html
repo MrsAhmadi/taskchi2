@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسک چی - </title>
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/fontawesome.css">
+    <link rel="stylesheet" href="../Css/solid.css">
+    <link rel="stylesheet" href="../Css/brands.css">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/style-ltr.css">
+    <link rel="stylesheet" href="../Css/dark.css">
+    <link rel="stylesheet" href="../Css/Responsive.css">
+
+
+
+</head>
+<body>
+<!-- Modal -->
+<div id="logout-modal" class="modal fade" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">هشدار</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted">آیا از خروج مطمئن هستید؟</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger px-4">خروج</button>
+                <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">بازگشت</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of modal-->
+<header class="col-12 col-xl-10 col-lg-9 col-md-8 top-header me-auto bg-white shadow-sm py-3" >
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-2 d-md-none d-flex align-items-center">
+                <button class="hamburger-button collapsed" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="col-7 col-md-7 col-lg-3">
+                <form  action="">
+                    <div class="input-group d-flex align-items-center">
+                        <label for="company-selection" class="form-label ms-2 fw-bold text-dark mb-0 ">شرکت جاری</label>
+                        <select class="form-control rounded" name="company-selection" id="company-selection">
+                            <option value="">...</option>
+                            <option value="0">ثبت شرکت جدید</option>
+                            <option value="1">شخصی عباس کاشی</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-3 col-md-5 col-lg-6">
+                <ul class="navbar-nav flex-row justify-content-end ">
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link  rounded px-2 px-md-3 fw-bold " role="button" id="btn-newTask">
+                            تسک جدید
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-2 px-md-3 ml-3 fw-bold " href="#logout-modal" data-bs-toggle="modal"  id="btn-exit">
+                            خروج
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="box-setting">
+    <div class="d-flex align-items-center gap-3">
+        <div>
+            <button class="btn setting-btn">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </button>
+        </div>
+
+        <div class="bg-white shadow rounded p-2 d-flex flex-column gap-3">
+            <div class="dark-Mode">
+                <h6 class="mb-3 fw-bold">تغییر حالت دارک</h6>
+                <div class="form-check form-switch switch-theme-mode  p-0">
+                    <label id="switch" class="form-check-label switch position-relative d-inline-block  rounded" for="nightModeSwitch">
+                        <input type="checkbox" id="nightModeSwitch" class="">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="box-theme">
+                <h6 class="mb-3 fw-bold">تغییر تم قالب</h6>
+                <ul class="list-color list-unstyled d-flex flex-wrap align-items-center gap-2">
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#24695C33" value="#24695c"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#7c282845" value="#8B0000FF"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#2d698733" value="#2d6987"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#181c3247" value="#181c32"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#6610f22b" value="#9c6ce9"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#ff7f5038" value="#FF7F50FF"></button>
+                    </li>
+                    <li>
+                        <button role="button" class="btn btn-color" data-color="#f75f9630" value="#f75f96"></button>
+                    </li>
+
+                    <li>
+                        <button role="button" class="btn btn-color " data-color="#28eded21" value="#28eded"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-xl-2 col-lg-3 col-md-4 bg-white sidebar">
+            <button type="button" class="closed d-block d-md-none mt-2 ms-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="sidebar-user border-bottom ">
+                <div class=" box-user-profile">
+                    <div id="edit-profile" class="d-flex justify-content-center  align-items-center mt-3 setting-list">
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="user-profile">
+                        <img src="../images/profile.png" alt="profile">
+                    </a>
+                    <a href="#" id="user-name">
+                        <h6>
+                            خانم احمدی
+                        </h6>
+                    </a>
+                    <span id="user-number">09139096707</span>
+                </div>
+                <div class=" work-hours">
+                    <ul>
+                        <li title="کارکرد ماه جاری">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                        <li title="کارکرد هفته جاری">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                        <li title="کارکرد امروز">
+                            <span>00:00</span>
+                            <p>ساعت</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sidebar-menu">
+                <ul class="nav-bar list-unstyled fw-bold mx-2 " id="accordion-menu">
+                    <li class="nav-item ">
+                        <a class="nav-link active"  >
+                            داشبورد
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            اطلاعات اولیه
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseOne" class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+                            <li><a href="#">شرکت های من</a></li>
+                            <li><a href="#" >پروژه های من</a></li>
+                            <li><a href="#" >گروه های من</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link  collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            تسک ها
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseTwo"  class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+                            <li><a href="#">تسک های شرکت</a></li>
+                            <li><a href="#">تسک های شرکت - روزانه</a></li>
+                            <li><a href="#">کارکردها</a></li>
+                            <li><a href="#">کارکردها - تایم لاین</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            گزارشات
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="collapseThree" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu" >
+                            <li><a  href="#" >مجموع کارکرد</a></li>
+                            <li><a href="#"  >پروژه ها</a></li>
+                            <li><a href="#" >ماهانه پروژه ها</a></li>
+                            <li><a href="#">پرسنل</a></li>
+                            <li><a href="#" >ماهانه پرسنل</a></li>
+                            <li><a href="#" >تسک ها</a></li>
+                            <li><a href="#">زمان پیش بینی</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link list" role="button">
+                            چت
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#setting" aria-expanded="false" aria-controls="setting">
+                            تنظیمات
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <ul id="setting" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+                            <li>
+                                <a href="#">
+                                    تنظیمات کاربران
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-xl-10 col-lg-9 col-md-8 me-auto py-5 mt-5">
+            <div class="container-fluid">
+                <div class="row chat-room">
+                    <div class="col-12 col-md-8 mb-3 mb-md-0">
+                        <div class="card pb-0">
+                            <div class="card-body pt-2  chat-view scroll-view " >
+                                <div class="box-date d-flex align-items-center justify-content-center">
+                                    <span class="date">دوشنبه 3 آبان 1401</span>
+                                </div>
+                                <div class="message-out clearfix">
+                                    <div class="smg-out">
+                                        <p>
+                                            سلام حال شما ؟
+                                        </p>
+                                        <div class="d-flex justify-content-end mt-1 ">
+                                            <span class="text-muted d-inline-block mr-1">12:30</span>
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.56666 12.8131L5.56501 12.8113L1.52559 8.50548L1.52549 8.50537C1.26751 8.23015 1.26754 7.76925 1.52559 7.49407C1.76077 7.24327 2.12146 7.24327 2.35664 7.49407L2.35689 7.49434L5.49458 10.8368L5.98084 11.3548L6.46689 10.8366L13.6407 3.18816L13.6408 3.1881C13.8759 2.9373 14.2366 2.9373 14.4718 3.1881C14.7299 3.46332 14.7299 3.92429 14.4718 4.19951L6.39616 12.8114L6.39462 12.8131C6.27364 12.943 6.12428 13 5.98064 13C5.8382 13 5.68731 12.9426 5.56666 12.8131Z" fill="#BFBFBF"/>
+                                            </svg>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="message-out clearfix">
+                                    <div class="smg-out">
+                                        <p>
+                                            وقتتون بخیر
+                                        </p>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <span class="text-muted d-inline-block mr-1">12:32</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.56666 12.8131L5.56501 12.8113L1.52559 8.50548L1.52549 8.50537C1.26751 8.23015 1.26754 7.76925 1.52559 7.49407C1.76077 7.24327 2.12146 7.24327 2.35664 7.49407L2.35689 7.49434L5.49458 10.8368L5.98084 11.3548L6.46689 10.8366L13.6407 3.18816L13.6408 3.1881C13.8759 2.9373 14.2366 2.9373 14.4718 3.1881C14.7299 3.46332 14.7299 3.92429 14.4718 4.19951L6.39616 12.8114L6.39462 12.8131C6.27364 12.943 6.12428 13 5.98064 13C5.8382 13 5.68731 12.9426 5.56666 12.8131Z" fill="#24695c"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.56666 12.8131L9.56501 12.8113L5.52559 8.50548L5.52549 8.50537C5.26751 8.23015 5.26754 7.76925 5.52559 7.49407C5.76077 7.24327 6.12146 7.24327 6.35664 7.49407L6.35689 7.49434L9.49458 10.8368L9.98084 11.3548L10.4669 10.8366L17.6407 3.18816L17.6408 3.1881C17.8759 2.9373 18.2366 2.9373 18.4718 3.1881C18.7299 3.46332 18.7299 3.92429 18.4718 4.19951L10.3962 12.8114L10.3946 12.8131C10.2736 12.943 10.1243 13 9.98064 13C9.8382 13 9.68731 12.9426 9.56666 12.8131Z" fill="#24695c"/>
+                                            </svg>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="message-out clearfix ">
+                                    <div class="smg-out">
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+                                        </p>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <span class="text-muted d-inline-block mr-1">12:32</span>
+                                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.56666 12.8131L5.56501 12.8113L1.52559 8.50548L1.52549 8.50537C1.26751 8.23015 1.26754 7.76925 1.52559 7.49407C1.76077 7.24327 2.12146 7.24327 2.35664 7.49407L2.35689 7.49434L5.49458 10.8368L5.98084 11.3548L6.46689 10.8366L13.6407 3.18816L13.6408 3.1881C13.8759 2.9373 14.2366 2.9373 14.4718 3.1881C14.7299 3.46332 14.7299 3.92429 14.4718 4.19951L6.39616 12.8114L6.39462 12.8131C6.27364 12.943 6.12428 13 5.98064 13C5.8382 13 5.68731 12.9426 5.56666 12.8131Z" fill="#BFBFBF"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.56666 12.8131L9.56501 12.8113L5.52559 8.50548L5.52549 8.50537C5.26751 8.23015 5.26754 7.76925 5.52559 7.49407C5.76077 7.24327 6.12146 7.24327 6.35664 7.49407L6.35689 7.49434L9.49458 10.8368L9.98084 11.3548L10.4669 10.8366L17.6407 3.18816L17.6408 3.1881C17.8759 2.9373 18.2366 2.9373 18.4718 3.1881C18.7299 3.46332 18.7299 3.92429 18.4718 4.19951L10.3962 12.8114L10.3946 12.8131C10.2736 12.943 10.1243 13 9.98064 13C9.8382 13 9.68731 12.9426 9.56666 12.8131Z" fill="#BFBFBF"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message-out clearfix ">
+                                    <div class="smg-out">
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                                        </p>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <span class="text-muted d-inline-block mr-1">12:32</span>
+                                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.56666 12.8131L5.56501 12.8113L1.52559 8.50548L1.52549 8.50537C1.26751 8.23015 1.26754 7.76925 1.52559 7.49407C1.76077 7.24327 2.12146 7.24327 2.35664 7.49407L2.35689 7.49434L5.49458 10.8368L5.98084 11.3548L6.46689 10.8366L13.6407 3.18816L13.6408 3.1881C13.8759 2.9373 14.2366 2.9373 14.4718 3.1881C14.7299 3.46332 14.7299 3.92429 14.4718 4.19951L6.39616 12.8114L6.39462 12.8131C6.27364 12.943 6.12428 13 5.98064 13C5.8382 13 5.68731 12.9426 5.56666 12.8131Z" fill="#BFBFBF"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.56666 12.8131L9.56501 12.8113L5.52559 8.50548L5.52549 8.50537C5.26751 8.23015 5.26754 7.76925 5.52559 7.49407C5.76077 7.24327 6.12146 7.24327 6.35664 7.49407L6.35689 7.49434L9.49458 10.8368L9.98084 11.3548L10.4669 10.8366L17.6407 3.18816L17.6408 3.1881C17.8759 2.9373 18.2366 2.9373 18.4718 3.1881C18.7299 3.46332 18.7299 3.92429 18.4718 4.19951L10.3962 12.8114L10.3946 12.8131C10.2736 12.943 10.1243 13 9.98064 13C9.8382 13 9.68731 12.9426 9.56666 12.8131Z" fill="#BFBFBF"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message-in clearfix">
+                                    <div class="smg-in">
+                                        <p>
+                                            سلام
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-in clearfix">
+                                    <div class="smg-in">
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-in clearfix">
+                                    <div class="smg-in">
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-in clearfix">
+                                    <div class="smg-in">
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-footer border-0 d-flex justify-content-center align-items-center">
+                                <div class="text-area  ">
+                                    <svg class="sticker" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <g clip-path="url(#clip0_1263_82739)">
+                                            <path d="M13.8334 21.0557C13.1014 21.2285 12.343 21.3173 11.5846 21.3173C6.22539 21.3173 1.86459 16.9565 1.86459 11.5973C1.86459 6.23808 6.22539 1.87728 11.5846 1.87728C16.9438 1.87728 21.3046 6.23808 21.3046 11.5973C21.3046 12.3845 21.211 13.1693 21.0238 13.9277C20.9158 14.3621 21.1822 14.8013 21.6166 14.9069C22.051 15.0197 22.4902 14.7509 22.5958 14.3141C22.8142 13.4285 22.9246 12.5141 22.9246 11.5949C22.9246 5.34048 17.8366 0.254883 11.5846 0.254883C5.33019 0.254883 0.242188 5.34288 0.242188 11.5949C0.242188 17.8493 5.33019 22.9373 11.5822 22.9373C12.4678 22.9373 13.351 22.8341 14.2054 22.6325C14.6398 22.5293 14.911 22.0949 14.8054 21.6581C14.7046 21.2213 14.2678 20.9501 13.8334 21.0557Z" fill="#BFBFBF"/>
+                                            <path d="M6.00675 14.2732C5.65395 14.5492 5.59155 15.058 5.86755 15.4108C7.25955 17.1916 9.35235 18.2116 11.6107 18.2116C13.8931 18.2116 16.0003 17.1724 17.3923 15.3628C17.6659 15.0076 17.5987 14.5012 17.2435 14.2276C16.8883 13.954 16.3819 14.0212 16.1083 14.3764C15.0259 15.7852 13.3867 16.5916 11.6107 16.5916C9.85395 16.5916 8.22675 15.7972 7.14195 14.4124C6.86835 14.0596 6.35715 13.9996 6.00675 14.2732Z" fill="#BFBFBF"/>
+                                            <path d="M9.1788 10.4621V8.84209C9.1788 8.17009 8.6364 7.62769 7.9644 7.62769C7.2924 7.62769 6.75 8.17009 6.75 8.84209V10.4621C6.75 11.1341 7.2924 11.6765 7.9644 11.6765C8.6364 11.6765 9.1788 11.1317 9.1788 10.4621Z" fill="#BFBFBF"/>
+                                            <path d="M16.4718 10.4621V8.84209C16.4718 8.17009 15.927 7.62769 15.2574 7.62769C14.5878 7.62769 14.043 8.17009 14.043 8.83969V10.4597C14.043 11.1317 14.5878 11.6741 15.2574 11.6741C15.927 11.6741 16.4718 11.1317 16.4718 10.4621Z" fill="#BFBFBF"/>
+                                            <path d="M22.9514 18.8855H20.5226V16.4543C20.5226 16.0055 20.1602 15.6431 19.7114 15.6431C19.2626 15.6431 18.9002 16.0055 18.9002 16.4543V18.8855H16.4714C16.0226 18.8855 15.6602 19.2479 15.6602 19.6967C15.6602 20.1455 16.0226 20.5079 16.4714 20.5079H18.9026V22.9391C18.9026 23.3879 19.265 23.7503 19.7138 23.7503C20.1626 23.7503 20.525 23.3879 20.525 22.9391V20.5055H22.9562C23.405 20.5055 23.7674 20.1431 23.7674 19.6943C23.7674 19.2455 23.4002 18.8855 22.9514 18.8855Z" fill="#BFBFBF"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1263_82739">
+                                                <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <textarea class="border rounded" name="massage" id="massage" placeholder="متن پیام ..." ></textarea>
+                                    <svg class="voice" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                        <path d="M15.9344 7.60013C15.6094 7.60013 15.351 7.85846 15.351 8.18346V9.50013C15.351 12.4501 12.951 14.8501 10.001 14.8501C7.05104 14.8501 4.65104 12.4501 4.65104 9.50013V8.17513C4.65104 7.85013 4.39271 7.5918 4.06771 7.5918C3.74271 7.5918 3.48438 7.85013 3.48438 8.17513V9.4918C3.48438 12.8835 6.09271 15.6751 9.41771 15.9751V17.7501C9.41771 18.0751 9.67604 18.3335 10.001 18.3335C10.326 18.3335 10.5844 18.0751 10.5844 17.7501V15.9751C13.901 15.6835 16.5177 12.8835 16.5177 9.4918V8.17513C16.5094 7.85846 16.251 7.60013 15.9344 7.60013Z" fill="#BFBFBF"/>
+                                        <path d="M9.99974 1.6665C7.96641 1.6665 6.31641 3.3165 6.31641 5.34984V9.6165C6.31641 11.6498 7.96641 13.2998 9.99974 13.2998C12.0331 13.2998 13.6831 11.6498 13.6831 9.6165V5.34984C13.6831 3.3165 12.0331 1.6665 9.99974 1.6665ZM11.0914 7.45817C11.0331 7.67484 10.8414 7.8165 10.6247 7.8165C10.5831 7.8165 10.5414 7.80817 10.4997 7.79984C10.1747 7.70817 9.83307 7.70817 9.50807 7.79984C9.24141 7.87484 8.98307 7.7165 8.91641 7.45817C8.84141 7.19984 8.99974 6.93317 9.25807 6.8665C9.74974 6.73317 10.2664 6.73317 10.7581 6.8665C11.0081 6.93317 11.1581 7.19984 11.0914 7.45817ZM11.5331 5.8415C11.4581 6.0415 11.2747 6.15817 11.0747 6.15817C11.0164 6.15817 10.9664 6.14984 10.9081 6.13317C10.3247 5.9165 9.67474 5.9165 9.09141 6.13317C8.84141 6.22484 8.55807 6.0915 8.46641 5.8415C8.37474 5.5915 8.50807 5.30817 8.75807 5.22484C9.55807 4.93317 10.4414 4.93317 11.2414 5.22484C11.4914 5.3165 11.6247 5.5915 11.5331 5.8415Z" fill="#BFBFBF"/>
+                                    </svg>
+                                </div>
+                                <div class="px-1 mb-1">
+                                    <button type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                    </button>
+                                </div>
+                                <div class="px-1 mb-1 ">
+                                    <button type="submit" >
+                                        <i class="fa fa-paperclip"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 ">
+                        <div class="card">
+                            <div class="card-header py-0">
+                                <h6 class="border-bottom pb-2">کاربران / گروهان</h6>
+                            </div>
+                            <div class="card-body scroll-view">
+                                <ul class="chatroom-sidebar mt-0">
+                                    <li>
+                                        <a href="" class="d-flex align-items-center">
+                                            <div class="profile ">
+                                                <img src="../images/profile.png" alt="profile" >
+                                            </div>
+                                            <span>عباس کاشی</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="d-flex align-items-center">
+                                            <div class="profile">
+                                                <img src="../images/profile.png" alt="profile" >
+                                            </div>
+                                            <span>مریم احمدی</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="d-flex align-items-center">
+                                            <div class="profile">
+                                                <img src="../images/profile.png" alt="profile" >
+                                            </div>
+                                            <span>محمدرضا سربند</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="d-flex align-items-center">
+                                            <div class="profile">
+                                                <img src="../images/profile.png" alt="profile" >
+                                            </div>
+                                            <span>محمدرضا احمدآبادی</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+<footer class="d-md-none">
+    <div class="footer-mobile">
+        <ul class="navigation-mobile  w-100 d-flex align-items-center justify-content-around">
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="d-inline-block mt-2 font12 " >تسک جدید</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon-dashboard">
+                    <i class="fa-solid fa-home"></i>
+                    <span class="d-inline-block mt-2 font12">داشبورد</span>
+                </a>
+            </li>
+            <li >
+                <a href="">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="d-inline-block mt-2 font12" >تسک جدید</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<script src="../myScript/jquery-3.6.0.min.js"></script>
+<script src="../myScript/bootstrap.min.js"></script>
+<script src="../myScript/js.js"></script>
+</body>
+</html>
