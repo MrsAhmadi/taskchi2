@@ -38,6 +38,12 @@
     .table-responsive td:before{
         content: attr(data-bs-original-title);
     }
+    #forecast-time .table-responsive td{
+        padding-right: 50%;
+    }
+    #forecast-time .table-responsive td:before{
+        width: 50%;
+    }
 }
 /*For Mobiles*/
 @media screen  and (max-width: 767px) {
@@ -47,7 +53,8 @@
     .sidebar {
         width: 75%;
         transform: translateX(100%);
-        transition: all .1ms;
+        transition: all 0.5s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+        /*transition: all .1ms;*/
         visibility: hidden;
     }
     .open-sidebar {

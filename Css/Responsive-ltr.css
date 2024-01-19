@@ -1,0 +1,47 @@
+/*for tablet*/
+@media screen and (max-width: 991px) {
+    .table-responsive td {
+      padding-right:0.5rem;
+        padding-left: 30%;
+        text-align:left;
+    }
+    .table-responsive td:before {
+        left: 6px;
+        right: 0;
+        padding-left:0.5rem;
+        padding-right: 10px;
+        text-align:left;
+        white-space: pre-wrap;
+    }
+    .table-responsive td:before{
+        content: attr(data-bs-original-title);
+    }
+    .table-responsive td.pe-0{
+        padding-right:0.5rem;
+        padding-left:0.5rem!important;
+    }
+    .table tbody tr{
+        margin-bottom: 1rem;
+    }
+    #forecast-time .table-responsive td{
+        padding-right:0.5rem;
+        padding-left: 55%;
+    }
+    #forecast-time .table-responsive td:before{
+        width: 55%;
+    }
+}
+/*For Mobiles*/
+@media screen  and (max-width: 767px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: all 0.5s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    }
+    .open-sidebar {
+        transform: none;
+        transition: all 0.5s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+        visibility: visible;
+    }
+
+}

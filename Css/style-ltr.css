@@ -86,6 +86,7 @@ ul.ms-3 {
 }
 .ps-0{
     padding-right: 0 !important;
+    padding-left:calc(var(--bs-gutter-x) * .5) !important;
 }
 .form-check.ps-0{
     padding-left: 1.5rem!important;
@@ -169,13 +170,21 @@ ul.nested{
 .box-setting.active{
     transform: translateX(-140px);
 }
-/*#login .input-group i.fa-eye{*/
-/*    left: 0;*/
-/*    right: auto;*/
-/*}*/
+
 .input-group span{
     left: auto;
     right:45px;
+}
+
+.content-box .row{
+    --bs-gutter-x: 0.25rem;
+}
+.table-responsive td.pe-0,.table-responsive th.pe-0{
+    padding-right:0.5rem;
+    padding-left: 0!important;
+}
+.text-lg-end {
+    text-align: left !important;
 }
 
 
@@ -187,6 +196,6 @@ ul.nested{
 }
 /*@media screen  and (max-width: 767px) {*/
 /*    .sidebar {*/
-/*        transform: translateX(-100%);*/
+/*        !*transform: translateX(-100%)!important;*!*/
 /*    }*/
 /*}*/
