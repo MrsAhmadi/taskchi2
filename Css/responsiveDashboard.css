@@ -1,0 +1,17 @@
+@media screen and (min-width: 768px) {
+
+}
+/*for tablet*/
+@media screen and (max-width: 991px) {
+    .box-sale{
+        height: auto;
+    }
+}
+
+
+/*For Mobiles*/
+@media screen  and (max-width: 767px) {
+    .box-sale {
+        height: auto;
+    }
+}

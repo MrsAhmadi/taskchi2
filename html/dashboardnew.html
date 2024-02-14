@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسک چی - </title>
+  <link rel="stylesheet" href="../Css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Css/fontawesome.css">
+  <link rel="stylesheet" href="../Css/solid.css">
+  <link rel="stylesheet" href="../Css/brands.css">
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/style-ltr.css">
+  <link rel="stylesheet" href="../Css/dashboardStyle.css">
+  <link rel="stylesheet" href="../Css/dark.css">
+  <link rel="stylesheet" href="../Css/Responsive.css">
+  <link rel="stylesheet" href="../Css/Responsive-ltr.css">
+  <link rel="stylesheet" href="../Css/responsiveDashboard.css">
+  <script src="../myScript/jquery-3.6.0.min.js"></script>
+  <script src="../myScript/bootstrap.bundle.min.js"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<!--  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js'></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+
+  <!--  <script src="../myScript/bootstrap.min.js"></script>-->
+  <script src="../myScript/js.js"></script>
+
+
+
+</head>
+<body>
+<!-- Modal -->
+<div id="logout-modal" class="modal fade" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">هشدار</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p class="text-muted">آیا از خروج مطمئن هستید؟</p>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger px-4">خروج</button>
+        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">بازگشت</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of modal-->
+<header class="col-12 col-xl-10 col-lg-9 col-md-8 top-header me-auto bg-white shadow-sm py-3" >
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-2 d-md-none d-flex align-items-center">
+        <button class="hamburger-button collapsed" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="col-7 col-md-7 col-lg-3">
+        <form  action="">
+          <div class="input-group d-flex align-items-center">
+            <label for="company-selection" class="form-label ms-2 fw-bold text-dark mb-0 ">شرکت جاری</label>
+            <select class="form-control rounded" name="company-selection" id="company-selection">
+              <option value="">...</option>
+              <option value="0">ثبت شرکت جدید</option>
+              <option value="1">شخصی عباس کاشی</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="col-3 col-md-5 col-lg-6">
+        <ul class="navbar-nav flex-row justify-content-end ">
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link  rounded px-2 px-md-3 fw-bold " role="button" id="btn-newTask">
+              تسک جدید
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded px-2 px-md-3 ml-3 fw-bold " href="#logout-modal" data-bs-toggle="modal"  id="btn-exit">
+              خروج
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="box-setting">
+  <div class="d-flex align-items-center gap-3">
+    <div>
+      <button class="btn setting-btn">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+      </button>
+    </div>
+    <div class="bg-white shadow rounded p-2 d-flex flex-column gap-3">
+      <div class="dark-Mode">
+        <h6 class="mb-3 fw-bold">تغییر حالت دارک</h6>
+        <div class="form-check form-switch switch-theme-mode p-0">
+          <label id="switch" class="form-check-label switch position-relative d-inline-block  rounded" for="nightModeSwitch">
+            <input type="checkbox" id="nightModeSwitch" class="">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="box-theme">
+        <h6 class="mb-3 fw-bold">تغییر تم قالب</h6>
+        <ul class="list-color list-unstyled d-flex flex-wrap align-items-center gap-2">
+          <li>
+            <button role="button" class="btn btn-color" data-color="#24695C33" value="#24695c"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#7c282845" value="#8B0000FF"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#2d698733" value="#2d6987"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#181c3247" value="#181c32"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#6610f22b" value="#9c6ce9"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#ff7f5038" value="#FF7F50FF"></button>
+          </li>
+          <li>
+            <button role="button" class="btn btn-color" data-color="#f75f9630" value="#f75f96"></button>
+          </li>
+
+          <li>
+            <button role="button" class="btn btn-color " data-color="#28eded21" value="#28eded"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 col-lg-3 col-md-4 bg-white sidebar">
+      <button type="button" class="closed d-block d-md-none mt-2 ms-2">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="sidebar-user border-bottom ">
+        <div class=" box-user-profile">
+          <div id="edit-profile" class="d-flex justify-content-center  align-items-center mt-3 setting-list">
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+            </a>
+          </div>
+          <a href="#" class="user-profile">
+            <img src="../images/profile.png" alt="profile">
+          </a>
+          <a href="#" id="user-name">
+            <h6>
+              خانم احمدی
+            </h6>
+          </a>
+          <span id="user-number">09139096707</span>
+        </div>
+        <div class=" work-hours">
+          <ul>
+            <li title="کارکرد ماه جاری">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+            <li title="کارکرد هفته جاری">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+            <li title="کارکرد امروز">
+              <span>00:00</span>
+              <p>ساعت</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="sidebar-menu">
+        <ul class="nav-bar list-unstyled fw-bold mx-2 " id="accordion-menu">
+          <li class="nav-item ">
+            <a class="nav-link active"  >
+              داشبورد
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              اطلاعات اولیه
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseOne" class="list-collapse list-unstyled font-weight-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li><a href="#">شرکت های من</a></li>
+              <li><a href="#" >پروژه های من</a></li>
+              <li><a href="#" >گروه های من</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link  collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              تسک ها
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseTwo"  class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li><a href="#">تسک های شرکت</a></li>
+              <li><a href="#">تسک های شرکت - روزانه</a></li>
+              <li><a href="#">کارکردها</a></li>
+              <li><a href="#">کارکردها - تایم لاین</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  collapsed " role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              گزارشات
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="collapseThree" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu" >
+              <li><a  href="#" >مجموع کارکرد</a></li>
+              <li><a href="#"  >پروژه ها</a></li>
+              <li><a href="#" >ماهانه پروژه ها</a></li>
+              <li><a href="#">پرسنل</a></li>
+              <li><a href="#" >ماهانه پرسنل</a></li>
+              <li><a href="#" >تسک ها</a></li>
+              <li><a href="#">زمان پیش بینی</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link list" role="button">
+              چت
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#setting" aria-expanded="false" aria-controls="setting">
+              تنظیمات
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul id="setting" class="list-collapse list-unstyled fw-normal pb-1 small collapse" data-bs-parent="#accordion-menu">
+              <li>
+                <a href="#">
+                  تنظیمات کاربران
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-xl-10 col-lg-9 col-md-8 me-auto py-5 mt-5">
+      <div class="container-fluid">
+
+<!--        آمار فروش-->
+        <div class="box-sale row mb-3 g-3">
+            <div class="col-lg-3 ">
+              <div class="row justify-content-between align-content-between  h-100 g-3 ">
+                <div class="col-12">
+                  <div class="card border-0 flex-fill shadow-sm">
+                    <div class="card-body py-4">
+                      <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                          <h3 class="mb-2">$ 24.300</h3>
+                          <p class="mb-2">Today's sale</p>
+                          <div class="mb-0">
+                            <span class="badge badge-light-danger me-2"> +5.35% </span>
+                            <span class="text-muted">since yesterday</span>
+                          </div>
+                        </div>
+                        <div class="d-inline-block">
+                          <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-12">
+                  <div class="card border-0 flex-fill shadow-sm">
+                    <div class="card-body py-4">
+                      <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                          <h3 class="mb-2">$ 24.300</h3>
+                          <p class="mb-2">This week's sale</p>
+                          <div class="mb-0">
+                            <span class="badge badge-light-success me-2"> +5.35% </span>
+                            <span class="text-muted">Since last week</span>
+                          </div>
+                        </div>
+                        <div class="d-inline-block">
+                          <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card border-0 flex-fill shadow-sm">
+                    <div class="card-body py-4">
+                      <div class="d-flex align-items-start">
+                        <div class="flex-grow-1">
+                          <h3 class="mb-2">$ 24.300</h3>
+                          <p class="mb-2">This month's sale</p>
+                          <div class="mb-0">
+                            <span class="badge badge-light-success me-2"> +8.15% </span>
+                            <span class="text-muted">since last month</span>
+                          </div>
+                        </div>
+                        <div class="d-inline-block ">
+                          <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-9  ">
+              <div class="card border-0  shadow-sm h-100">
+                <div class="card-header border-0 card-header-space-between">
+
+                  <!-- Title -->
+                  <h6 class="card-title fw-bold fs-5 ">
+                    This year's sale
+                  </h6>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                  <div class="card-body" >
+                    <canvas id="popChart" width="600" height="300"></canvas>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+<!--        نمودار دایره ای-->
+        <div class="mb-3">
+          <div class="row row-cols-lg-3 mb-3 g-3 ">
+            <div class="col">
+              <!-- Card -->
+              <div class="card border-0 card-h-100 shadow-sm">
+                <div class="card-header border-0 card-header-space-between">
+
+                  <!-- Title -->
+                  <h6 class="card-title ">
+                    Total number of sales
+                  </h6>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="card-body text-center d-flex flex-column align-items-center">
+                  <div>
+                    <div class="chart"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col">
+              <!-- Card -->
+              <div class="card border-0 card-h-100 shadow-sm">
+                <div class="card-header border-0 card-header-space-between">
+
+                  <!-- Title -->
+                  <h6 class="card-title ">
+                    Total amount of  sales
+                  </h6>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="card-body text-center d-flex flex-column align-items-center">
+
+                  <!-- Chart -->
+                  <div>
+                    <div id="chart1"></div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col">
+              <!-- Card -->
+              <div class="card border-0 card-h-100 shadow-sm">
+                <div class="card-header border-0 card-header-space-between">
+
+                  <!-- Title -->
+                  <h6 class="card-title ">
+                    Total purchase amount
+                  </h6>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+
+                </div>
+
+                <div class="card-body text-center d-flex flex-column align-items-center justify-content-between">
+                  <div>
+                    <div id="chart3"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+<!--        نمودار میله ای کارخانه-->
+        <div class="mb-3">
+          <div class="row">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm">
+                <div class="card-header border-0 card-header-space-between">
+
+                  <!-- Title -->
+                  <h6 class="card-title fw-bold fs-5 ">
+                    Products by factory
+                  </h6>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="card-body">
+                  <div>
+                    <div id="chart4"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<!--لیست مشتریان-->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card border-0 shadow-sm">
+              <div class="card-header border-0 card-header-space-between">
+
+                <!-- Title -->
+                <h6 class="card-title fw-bold fs-5 ">
+                  Customer list
+                </h6>
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                  <button href="" class="btn text-secondary border-0" type="button" data-bs-toggle="dropdown"   aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="card-body content-box scroll-y">
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-success ">تایید شده</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0 text-center">
+                    <span class="badge badge-light-warning">درحال پردازش</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-info">رد شد</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-danger">موفقیت آمیز</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center py-2 ">
+                  <div class="col-8 col-lg-4">
+                    <div class="d-flex align-items-center">
+                      <div class="profile-img">
+                        <img class="w-100 h-100 rounded" src="../images/300-6.jpg" alt="profile">
+                      </div>
+                      <div class="me-2">
+                        <a href="" class="d-block fw-bold">احمدی</a>
+                        <span class="d-block">ایمیل:
+                                                        <a href="" class="fs-12">ahmadimaryam1398@yahoo.com</a>
+                                                    </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 ">
+                    <div class="text-start text-lg-end">
+                      <a href="#" class="fw-bold d-block">$560,000</a>
+                      <span class="text-muted">پرداخت شده</span>
+                    </div>
+
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex flex-lg-row">
+                      <span class="text-muted">مدیر ساختمان</span>
+                    </div>
+                  </div>
+                  <div class="col-4 col-lg-2 text-center mt-3 mt-lg-0">
+                    <span class="badge badge-light-success ">تایید شده</span>
+                  </div>
+                  <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <ul class="d-flex flex-wrap gap-1">
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor"></path>
+                              <path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none">
+                              <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+                              <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="" class="d-flex align-items-center justify-content-center rounded p-1 theme-color bg-light " role="button">
+                            <svg class="font-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"></path>
+                              <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="d-md-none">
+  <div class="footer-mobile">
+    <ul class="navigation-mobile  w-100 d-flex align-items-center justify-content-around">
+      <li>
+        <a href="">
+          <i class="fa-solid fa-plus"></i>
+          <span class="d-inline-block mt-2 font12 " >تسک جدید</span>
+        </a>
+      </li>
+      <li>
+        <a href="" class="icon-dashboard">
+          <i class="fa-solid fa-home"></i>
+          <span class="d-inline-block mt-2 font12">داشبورد</span>
+        </a>
+      </li>
+      <li >
+        <a href="">
+          <i class="fa-solid fa-plus"></i>
+          <span class="d-inline-block mt-2 font12" >تسک جدید</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<!--نمودار میله ای 1-->
+<script>
+  var popCanvas = document.getElementById("popChart");
+  var barChart = new Chart(popCanvas, {
+    type: 'bar',
+    data: {
+      labels: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر","دی","بهمن","اسفند"],
+      datasets: [{
+        label: 'Population',
+        data: [20, 60, 30, 80, 40, 60, 40, 40, 40, 60,80,50],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 206, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 206, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)'
+        ],
+        columnWidth: '10%',
+
+      }],
+
+    },
+  });
+</script>
+
+<!--نمودار دایره ای 1-->
+<script>
+  var options = {
+    series: [44, 55, 41, 17, 15],
+    chart: {
+      width: 300,
+      type: 'pie',
+    },
+    plotOptions: {
+      pie: {
+        startAngle: -90,
+        endAngle: 270
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    fill: {
+      type: 'gradient',
+    },
+    legend: {
+      formatter: function(val, opts) {
+        return val + " - " + opts.w.globals.series[opts.seriesIndex]
+      },
+      position: 'bottom'
+
+    },
+    title: {
+      // text: 'Gradient Donut with custom Start-angle'
+    },
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 300
+        },
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }]
+  };
+
+  var chart = new ApexCharts(document.querySelector(".chart"), options);
+  chart.render();
+
+
+</script>
+
+<!--نمودار دایره ای 2-->
+<script>
+  var options = {
+    series: [44, 55, 41, 17, 15],
+    chart: {
+      width: 300,
+      type: 'donut',
+    },
+    plotOptions: {
+      pie: {
+        startAngle: -90,
+        endAngle: 270
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    fill: {
+      type: 'gradient',
+    },
+    legend: {
+      formatter: function(val, opts) {
+        return val + " - " + opts.w.globals.series[opts.seriesIndex]
+      },
+      position: 'bottom'
+
+    },
+    title: {
+      // text: 'Gradient Donut with custom Start-angle'
+    },
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 300
+        },
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }]
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart1"), options);
+  chart.render();
+
+
+</script>
+
+<!--نمودار دایره ای 3-->
+<script>
+  var options = {
+    series: [44, 55, 13, 43, 22],
+    chart: {
+      width: 330,
+      type: 'pie',
+    },
+    labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 300
+        },
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }]
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart3"), options);
+  chart.render();
+
+
+
+
+</script>
+
+<!--نمودار میله ای کارخانه-->
+<script>
+  var options = {
+    series: [{
+      data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+    }],
+    chart: {
+      type: 'bar',
+      height: 350
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    xaxis: {
+      categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
+        'United States', 'China', 'Germany'
+      ],
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart4"), options);
+  chart.render();
+
+
+
+</script>
+
+
+</body>
+</html>
