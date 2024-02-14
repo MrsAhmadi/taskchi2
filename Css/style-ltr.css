@@ -164,11 +164,11 @@ ul.nested{
     padding-right: 20px;
 }
 .box-setting{
-   right: -140px;
+   right:0;
     left: auto;
 }
 .box-setting.active{
-    transform: translateX(-140px);
+    /*transform: translateX(-140px);*/
 }
 
 .input-group span{

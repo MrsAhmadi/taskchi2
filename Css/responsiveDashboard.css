@@ -14,4 +14,8 @@
     .box-sale {
         height: auto;
     }
+    .apexcharts-legend{
+        flex-direction: column;
+
+    }
 }

@@ -1495,13 +1495,14 @@ ul.navigation-mobile li a.icon-dashboard{
    padding:0.5rem;
    position: fixed;
    top: 40%;
-   left:-140px;
+   left:0;
    z-index: 999;
    transition:all 0.3s;
+   transform: translateX(140px);
 
 }
 .box-setting.active{
-   transform: translateX(140px);
+   transform: none;
    transition:all 0.3s;
 }
 .box-setting .setting-btn{
