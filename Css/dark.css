@@ -1,6 +1,6 @@
 :root {
     --background-color: #242424; /* رنگ پس‌زمینه تاریک */
-    --text-color-dark: #ffffff; /* رنگ متن سفید */
+    --text-color-dark: #dadada; /* رنگ متن سفید */
     --text-color-muted: #dadada; /* رنگ متن خاکستری */
     --button-background: #333333; /* رنگ پس‌زمینه دکمه‌ها */
     --sub-background: #3e3e3e; /* رنگ پس‌زمینه دکمه‌ها */
@@ -159,4 +159,7 @@ input:checked + .slider:before {
 .dark-theme ul.navigation-mobile li a i{
     background-color:var(--button-background)!important;
     color: #ffffff;
+}
+.dark-theme .border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) #89929b !important;
 }

@@ -287,7 +287,7 @@ ul.list-collapse a.active-two{
 
 }
 .border-bottom{
-   border-bottom: 1px groove #eee;
+   /*border-bottom: 1px groove #eee!important;*/
 }
 .btn-outline-cinnamon{
    color: #ba895d ;
